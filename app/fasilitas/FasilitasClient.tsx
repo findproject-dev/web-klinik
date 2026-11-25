@@ -7,22 +7,6 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 type FacilityType = typeof FACILITIES[0];
 
-function FacilitySvgIcon({ id }: { id: string }) {
-  const icons: Record<string, React.ReactNode> = {
-    "ruang-tunggu": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 9h1a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h1"/><path d="M5 18v2"/><path d="M19 18v2"/><path d="M5 9V6a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3"/></svg>,
-    "ruang-konsultasi": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg>,
-    "ruang-pemeriksaan": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="12" y1="8" x2="12" y2="16"/></svg>,
-    "ruang-tindakan": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>,
-    "pemeriksaan-penunjang": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>,
-    "ruang-imunisasi": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m14.5 4.5 5 5"/><path d="m18 8 2.5-2.5a1.41 1.41 0 0 0 0-2l-1-1a1.41 1.41 0 0 0-2 0L15 5"/><path d="m13 7-8.5 8.5a2.12 2.12 0 0 0-.6 1.5V19h2a2.12 2.12 0 0 0 1.5-.6L16 10"/><path d="M7 15l2 2"/></svg>,
-    "apotek": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>,
-    "parkir": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>,
-    "toilet": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>,
-    "aksesibilitas": <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="4" r="2"/><path d="m18 10-6-1-6 1"/><path d="m6 21 3-9 3 2 3-2 3 9"/></svg>,
-  };
-  return <>{icons[id] || icons["ruang-tunggu"]}</>;
-}
-
 export default function FasilitasClient() {
   useScrollReveal();
   const [activeFacility, setActiveFacility] = useState<FacilityType | null>(null);

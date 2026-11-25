@@ -1,4 +1,4 @@
-import { CLINIC_INFO, buildWaUrl, WA_MESSAGES } from "@/lib/data";
+import { buildWaUrl, WA_MESSAGES } from "@/lib/data";
 
 export default function WhatsAppFloat() {
   return (

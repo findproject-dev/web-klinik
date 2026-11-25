@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { SERVICES, DOCTORS, WHY_ITEMS, TRUST_ITEMS, CLINIC_INFO, buildWaUrl, WA_MESSAGES } from "@/lib/data";
+import { SERVICES, DOCTORS, WHY_ITEMS, TRUST_ITEMS, CLINIC_INFO, WA_MESSAGES } from "@/lib/data";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 function ServiceIcon({ name }: { name: string }) {

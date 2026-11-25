@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CLINIC_INFO, buildWaUrl, WA_MESSAGES } from "@/lib/data";
+import { CLINIC_INFO, WA_MESSAGES } from "@/lib/data";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 function openBooking() {

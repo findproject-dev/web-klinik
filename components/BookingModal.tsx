@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import { SERVICES, DOCTORS, CLINIC_INFO, buildWaUrl, getTimeSlots } from "@/lib/data";
+import { SERVICES, DOCTORS, buildWaUrl, getTimeSlots } from "@/lib/data";
 
 type Step = 1 | 2 | 3 | 4 | 5 | 6;
 
@@ -117,9 +117,6 @@ export default function BookingModal() {
 
   const selectedDoctor = DOCTORS.find((d) => d.id === data.doctorId);
   const selectedDayName = data.date ? DAYS_ID[new Date(data.date + "T00:00:00").getDay()] : "";
-  const doctorAvailableToday = selectedDoctor
-    ? selectedDoctor.days.includes(selectedDayName)
-    : true;
   const timeSlots = data.date ? getTimeSlots(selectedDayName) : [];
   const filteredTimeSlots = selectedDoctor && data.date
     ? (() => {
@@ -175,8 +172,6 @@ export default function BookingModal() {
     window.open(msg, "_blank", "noopener,noreferrer");
     setStep(6 as Step);
   };
-
-  const selectedService = SERVICES.find((s) => s.id === data.serviceId);
 
   if (!isOpen) return null;
 
