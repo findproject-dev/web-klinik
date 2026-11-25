@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "build:css": "tailwindcss -i app/input.css -o app/globals.css --minify",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -14,12 +15,15 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.3.5",
+    "@tailwindcss/postcss": "^4.3.5",
     "@tailwindcss/turbopack": "4.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
+    "postcss": "^8.5.33",
     "tailwindcss": "4.3.3",
     "typescript": "^5"
   },
